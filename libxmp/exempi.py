@@ -49,7 +49,7 @@ def _load_exempi():
     """
     Loads exempi library.
     """
-    path = ctypes.util.find_library('exempi')
+    path = "{}/lib/libexempi.so".format(os.environ['LAMBDA_TASK_ROOT'])
     if path is None:
         if platform.system().startswith('Darwin'):
             if os.path.exists('/opt/local/lib/libexempi.dylib'):
