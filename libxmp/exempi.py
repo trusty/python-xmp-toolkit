@@ -60,7 +60,7 @@ def _load_exempi():
         try:
             path = "{}/lib/libexempi.so".format(os.environ['LAMBDA_TASK_ROOT'])
             if not os.path.exists(path):
-                path = "/tmp/{}/lib/libexempi.so".format(os.environ['AWS_LAMBDA_FUNCTION_NAME'])
+                path = "/tmp/{}/lib/libexempi.so".format(os.environ['PROJECT'])
         except:
             raise ExempiLoadError('Exempi library not found.')
 
